@@ -14,7 +14,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       WP-Rocket Background Cache
- * Plugin URI:        http://example.com/rocket-background-cache-uri/
+ * Plugin URI:        https://github.com/pcfreak30/rocket-background-cache
  * Description:       WordPress plugin to create page cache on demand in the background via wp-cron to reduce load. Extends WP-Rocket
  * Version:           0.1.0
  * Author:            Derrick Hammer <derrick@derrickhammer.com>
