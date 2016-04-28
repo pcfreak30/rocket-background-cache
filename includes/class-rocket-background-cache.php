@@ -287,7 +287,7 @@ class Rocket_Background_Cache {
 						rocket_clean_home();
 					}
 					wp_remote_get(
-						home_url(),
+						home_url( '/' ),
 						array(
 							'timeout'   => 60,
 							'blocking'  => false,
