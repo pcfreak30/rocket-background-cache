@@ -281,18 +281,14 @@ class Rocket_Background_Cache {
 					)
 				);
 				if ( 0 == get_option( 'show_on_front' ) ) {
-					if ( 0 < $user_id ) {
-						rocket_clean_user( $user_id );
-					} else {
-						rocket_clean_home();
-					}
+					rocket_clean_home();
 					wp_remote_get(
 						home_url( '/' ),
 						array(
 							'timeout'   => 60,
 							'blocking'  => false,
 							'sslverify' => false,
-							'cookies'   => $cookies[ $user_id ]
+							'cookies'   => ( 0 < $user_id ) ? $cookies[ $user_id ] : array(),
 						)
 					);
 
