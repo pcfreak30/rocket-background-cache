@@ -108,7 +108,7 @@ class Rocket_Background_Cache {
 			$error = true;
 			$this->loader->add_action( 'admin_notices', $this, '_activate_error_no_wprocket' );
 		} else {
-			if ( ! is_plugin_active( $wprocket_name ) ) {
+			if ( ! function_exists( 'rocket_init' ) ) {
 				activate_plugins( $wprocket_name );
 			}
 		}
