@@ -4,7 +4,7 @@ Donate link: https://www.paypal.me/pcfreak30
 Tags: wp-rocket, cache
 Requires at least: 4.5
 Tested up to: 4.5.1
-Stable tag: 1.0.2
+Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,8 @@ The cron time is currently set via filter defaulting to per minute.
 It is **recommended** to run wp-cron via unix cron either as a web fetch, WPCLI, or another means.
 
 This plugin works with logged in users as well by simulating the current users session cookies when requesting a page to cache.
+
+If you need dedicated/professional assistance with this plugin or just want an expert to get your site to run the fastest it can be, you may hire me at [Codeable](https://codeable.io/developers/derrick-hammer/?ref=rvtGZ)
 
 == Installation ==
 
