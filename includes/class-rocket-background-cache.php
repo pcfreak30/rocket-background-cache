@@ -302,7 +302,7 @@ class Rocket_Background_Cache {
 			if ( ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 				$user_id = get_current_user_id();
 				$status  = (array) get_post_meta( get_the_ID(), '_rocket_preload_status', true );
-				if ( false === strpos( $_SERVER['HTTP_USER_AGENT'], 'WordPress' ) && ( ( is_user_logged_in() && get_rocket_option( 'cache_logged_user' ) ) || ! is_user_logged_in() ) ) {
+				if ( false === strpos( $_SERVER['HTTP_USER_AGENT'], 'WordPress' ) && ( ( is_user_logged_in() && get_rocket_option( 'cache_logged_user' ) ) || ! is_user_logged_in() ) && 1 < get_the_ID() ) {
 					if ( empty( $status[ $user_id ] ) || ! is_array( $status[ $user_id ] ) ) {
 						$status[ $user_id ] = array();
 					}
@@ -315,6 +315,10 @@ class Rocket_Background_Cache {
 					}
 					if ( 'queued' == $status[ $user_id ]['status'] ) {
 						define( 'DONOTCACHEPAGE', true );
+						// WP Engine Support
+						if ( class_exists( 'WPECommon' ) ) {
+							WpeCommon::purge_varnish_cache( get_the_ID() );
+						}
 					}
 
 				} else {
