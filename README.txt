@@ -30,6 +30,24 @@ If you need dedicated/professional assistance with this plugin or just want an e
 
 == Changelog ==
 
+## 0.1.4 ##
+
+* Bug: Don't set DONOTCACHEPAGE if it already exists
+
+## 0.1.3 ##
+
+* Bug: Only queue if we are on an actual post
+* Enhancement: Add wp-engine hosting compatibility
+
+## 0.1.2 ##
+
+* Bug: If show_on_front is not set, only purge home, not all user cache
+* Bug: Only pass cookies if logged in
+
+## 0.1.1 ##
+
+* Bug: Add trailing slash on home url as wp-rocket seems to not cache the page otherwise
+
 ## 0.1.0 ##
 
 * Initial Release
