@@ -314,7 +314,9 @@ class Rocket_Background_Cache {
 						update_post_meta( get_the_ID(), '_rocket_preload_status', $status );
 					}
 					if ( 'queued' == $status[ $user_id ]['status'] ) {
-						define( 'DONOTCACHEPAGE', true );
+						if ( ! defined( 'DONOTCACHEPAGE' ) ) {
+							define( 'DONOTCACHEPAGE', true );
+						}
 						// WP Engine Support
 						if ( class_exists( 'WPECommon' ) ) {
 							WpeCommon::purge_varnish_cache( get_the_ID() );
