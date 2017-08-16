@@ -30,6 +30,10 @@ If you need dedicated/professional assistance with this plugin or just want an e
 
 == Changelog ==
 
+## 0.1.5 ##
+
+* Enhancement: Add compatibility with WP Critical CSS
+
 ## 0.1.4 ##
 
 * Bug: Don't set DONOTCACHEPAGE if it already exists
