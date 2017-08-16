@@ -281,6 +281,9 @@ class Rocket_Background_Cache {
 					)
 				);
 				if ( 0 == get_option( 'show_on_front' ) ) {
+					if ( function_exists( 'wp_criticalcss' ) ) {
+						wp_criticalcss()->get_integration_manager()->disable_integrations();
+					}
 					rocket_clean_home();
 					wp_remote_get(
 						home_url( '/' ),
